@@ -31,7 +31,7 @@ public class Produto {
     public void pedidoFeito(double pagar){
         Scanner teclado = new Scanner(System.in);
         
-        if (this.nome.equals(teclado)){
+        if (this.nome.equals("Espada")){
             if (this.quantEstoque>0){
             System.out.println("Digite o quanto deseja pagar(em R$):");
             pagar = teclado.nextDouble();
@@ -39,7 +39,7 @@ public class Produto {
                 System.out.println("Não é possível fazer a compra!");
             }else{
                 this.quantEstoque -= 1;
-                System.out.println("Compra efetuada com sucesso!\nA quantidade no estoque do material atual é:");
+                System.out.println("Compra efetuada com sucesso!\nA quantidade no estoque do material atual é:"+this.quantEstoque);
             }
             }else{
                 System.out.println("Desculpa,acabou o estoque do item no momento!");
