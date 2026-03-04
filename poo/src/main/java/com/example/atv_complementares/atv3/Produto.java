@@ -1,6 +1,6 @@
 package com.example.atv_complementares.atv3;
 
-import java.util.Scanner;
+
 
 public class Produto {
     private String nome;
