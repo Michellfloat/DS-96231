@@ -6,7 +6,7 @@ public class Produto {
     private String nome;
     private double preco;
     private int quantEstoque;
-    
+    private Pedido pedido;
     
     public String getNome() {
         return nome;
@@ -26,27 +26,19 @@ public class Produto {
     public void setQuantEstoque(int quantEstoque) {
         this.quantEstoque = quantEstoque;
     }
+    public Pedido getPedido(){
+        return pedido;
+    }
+    public void setPedido(Pedido pedido){
+        this.pedido = pedido;
+    }
 
-    //Método para comprar os itens
-    public void pedidoFeito(double pagar){
-        Scanner teclado = new Scanner(System.in);
-        
-        if (this.nome.equals("Espada")){
-            if (this.quantEstoque>0){
-            System.out.println("Digite o quanto deseja pagar(em R$):");
-            pagar = teclado.nextDouble();
-            if (this.preco>pagar){
-                System.out.println("Não é possível fazer a compra!");
-            }else{
-                this.quantEstoque -= 1;
-                System.out.println("Compra efetuada com sucesso!\nA quantidade no estoque do material atual é:"+this.quantEstoque);
-            }
-            }else{
-                System.out.println("Desculpa,acabou o estoque do item no momento!");
-            }
-
+    public void vendido(int quantidade){
+        if (this.quantEstoque>= quantidade){
+            this.quantEstoque-=quantidade;
+        }else{
+            System.out.println("Estoque insuficiente para venda!");
         }
-        
     }
 
 }
