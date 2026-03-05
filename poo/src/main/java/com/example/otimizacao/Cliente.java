@@ -6,7 +6,7 @@ public class Cliente {
 
     public Cliente(String nome, Pedido pedido){
         this.nome = nome;
-        this. pedido = pedido;
+        this.pedido = pedido;
 
     }
 
@@ -27,6 +27,6 @@ public class Cliente {
     }
     @Override
     public String toString(){
-        return "CLiente{" + "nome='" + nome + '\''+ ", pedido="+pedido+'}';
+        return "CLiente{" + "nome='" + nome + '\''+ ", pedido="+pedido.getTexto()+'}';
     }
 }

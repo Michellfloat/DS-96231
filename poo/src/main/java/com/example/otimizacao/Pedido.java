@@ -1,7 +1,18 @@
 package com.example.otimizacao;
 
 public enum Pedido {
-    ABERTO,
-    CANCELADO,
-    CONCLUIDO;
+    ABERTO("Aberto"),
+    CANCELADO("Cancelado"),
+    CONCLUIDO("Concluído");
+
+    private String texto;
+
+    Pedido(String texto){
+        this.texto = texto;
+    }
+
+    public String getTexto() {
+        return texto;
+    }
+    
 }
