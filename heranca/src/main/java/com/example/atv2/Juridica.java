@@ -22,7 +22,7 @@ public class Juridica extends Pessoa{
     }
     @Override
     public String toString() {
-        return "Juridica [cnpj=" + cnpj + ", inscricaoEstadual=" + inscricaoEstadual + "]";
+        return "Jurídica [cnpj=" + cnpj + ", nome=" + nome + ", telefone="+ telefone +", Inscrição Estadual=" + inscricaoEstadual + "]";
     }
 
     

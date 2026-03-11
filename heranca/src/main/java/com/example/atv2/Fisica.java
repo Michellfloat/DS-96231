@@ -30,7 +30,7 @@ public class Fisica extends Pessoa{
     }
     @Override
     public String toString() {
-        return "Fisica [cpf=" + cpf + ", rg=" + rg + ", dataNascimento=" + dataNascimento + "]";
+        return "Fisica [cpf=" + cpf + ", nome="+ nome + ", telefone="+ telefone +", rg=" + rg + ", dataNascimento=" + dataNascimento + "]";
     }
 
     
