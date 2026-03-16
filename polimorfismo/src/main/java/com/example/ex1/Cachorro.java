@@ -8,7 +8,6 @@ public class Cachorro implements Animal{
     }
     @Override
     public String comer() {
-        // TODO Auto-generated method stub
         return "Ração Pedigri";
     }
 }
