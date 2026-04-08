@@ -2,7 +2,6 @@ package com.example.atv.controller;
 
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,22 +11,24 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.atv.models.PetModels;
-import com.example.atv.repository.PetRepository;
+import com.example.atv.models.ProfessorModel;
+import com.example.atv.repository.ProfessorRepository;
 
 @RestController
-@RequestMapping("/pets")
-public class PetController {
+@RequestMapping("/professores")
+public class professorController {
     @Autowired
-    private PetRepository petRepository;
+
+    private ProfessorRepository professorRepository;
+
     @GetMapping
-    public List<PetModels>listarTodos(){
-        return petRepository.findAll();
+    public List<ProfessorModel>listarProfessores(){
+        return professorRepository.findAll();
     }
 
     @PostMapping
-    public ResponseEntity<PetModels>salvar(@RequestBody PetModels pet){
-        petRepository.save(pet);
-        return ResponseEntity.status(HttpStatus.CREATED).body(pet);
+    ResponseEntity<ProfessorModel>cadastrarProfessores(@RequestBody ProfessorModel professor){
+        professorRepository.save(professor);
+        return ResponseEntity.status(HttpStatus.CREATED).body(professor);
     }
 }
