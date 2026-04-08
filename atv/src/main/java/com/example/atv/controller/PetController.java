@@ -2,10 +2,9 @@ package com.example.atv.controller;
 
 import java.util.List;
 
-import org.apache.catalina.loader.ResourceEntry;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +19,7 @@ import com.example.atv.repository.PetRepository;
 @RequestMapping("/pets")
 public class PetController {
     @Autowired
-    private  PetRepository petRepository;
+    private PetRepository petRepository;
     @GetMapping
     public List<PetModels>listarTodos(){
         return petRepository.findAll();
