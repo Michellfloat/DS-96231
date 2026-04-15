@@ -8,21 +8,21 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.example.atv.models.FuncionarioModel;
-import com.example.atv.repository.FuncionarioRepository;
+import com.example.atv.models.FuncionarioModelAntigo;
+import com.example.atv.repository.FuncionarioRepositoryAntigo;
 
 @Service
-public class FuncionarioService {
+public class FuncionarioServiceAntigo {
 
     @Autowired
-    private FuncionarioRepository funcionarioRepository;
+    private FuncionarioRepositoryAntigo funcionarioRepository;
     @GetMapping
-    public List<FuncionarioModel>salvarFuncionarios(){
+    public List<FuncionarioModelAntigo>salvarFuncionarios(){
         return funcionarioRepository.findAll();
     }
 
     @PostMapping
-    public FuncionarioModel cadastrarFuncionarios(FuncionarioModel funcionario){
+    public FuncionarioModelAntigo cadastrarFuncionarios(FuncionarioModelAntigo funcionario){
         if(funcionarioRepository.findByEmail(funcionario.getEmail()).isPresent()){
             throw new RuntimeException("Funcionário já existente no sistema");
         }
@@ -30,7 +30,7 @@ public class FuncionarioService {
         return funcionarioRepository.save(funcionario);
         
     }
-    public FuncionarioModel atualizarFuncionario(Long id, FuncionarioModel funcionario){
+    public FuncionarioModelAntigo atualizarFuncionario(Long id, FuncionarioModelAntigo funcionario){
         if (!funcionarioRepository.existsById(id)) {
             throw new IllegalArgumentException("Funcionário não encontrado!");
         }

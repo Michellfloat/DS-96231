@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="tab_funcionarios")
-public class FuncionarioModel {
+public class FuncionarioModelAntigo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -25,11 +25,11 @@ public class FuncionarioModel {
     private String cpf;
 
 
-    public FuncionarioModel() {
+    public FuncionarioModelAntigo() {
     }
 
 
-    public FuncionarioModel(Long id, String nome, String email, String telefone, String cargo, String cpf) {
+    public FuncionarioModelAntigo(Long id, String nome, String email, String telefone, String cargo, String cpf) {
         this.id = id;
         this.nome = nome;
         this.email = email;
