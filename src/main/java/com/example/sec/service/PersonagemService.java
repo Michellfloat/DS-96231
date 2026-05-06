@@ -3,7 +3,6 @@ package com.example.sec.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.sec.dto.PersonagemRequestDTO;
@@ -18,8 +17,7 @@ public class PersonagemService {
     @Autowired
     private PersonagemRepository pRepository;
 
-    @Autowired
-    private BCryptPasswordEncoder encoder;
+   
 
     public List<PersonagemResponseDTO>listarPersonagens(){
         return pRepository.findAll().stream().map(p ->  new PersonagemResponseDTO(p.getNome(),p.getRaca(),p.getClasse(),p.getSexo(),p.getNivel(),p.getHabilidade())).toList();
