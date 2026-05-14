@@ -1,6 +1,6 @@
 package com.example.sec.service;
 
-import com.example.sec.repository.UsuarioRepository;
+
 
 import jakarta.transaction.Transactional;
 
@@ -16,13 +16,11 @@ import com.example.sec.repository.CenarioRepository;
 
 @Service
 public class CenarioService {
-    private final UsuarioRepository usuarioRepository;
+    
     @Autowired
     private CenarioRepository cenarioRepository;
 
-    CenarioService(UsuarioRepository usuarioRepository) {
-        this.usuarioRepository = usuarioRepository;
-    }
+    
 
     public List<CenarioResponseDTO>listarCenarios(){
         return cenarioRepository.findAll().stream().map(c -> new CenarioResponseDTO(c.getNome(),c.getTipo(),c.getHistoria())).toList();
