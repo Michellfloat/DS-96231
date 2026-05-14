@@ -18,7 +18,7 @@ public class CursoService {
     private CursoRepository cursoRepository;
 
     public CursoModel salvarCursos(CursoRequestDTO curso){
-        if (cursoRepository.findByInstituição(curso.getInstituicao()).isPresent()) {
+        if (cursoRepository.findByInstituicao(curso.getInstituicao()).isPresent()) {
             throw new RuntimeException("Curso já cadastrado!");
         }
         CursoModel novCurso = new CursoModel();

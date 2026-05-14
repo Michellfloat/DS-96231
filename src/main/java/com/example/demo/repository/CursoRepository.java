@@ -1,5 +1,3 @@
-
-
 package com.example.demo.repository;
 
 import java.util.Optional;
@@ -16,8 +14,9 @@ import com.example.demo.model.CursoModel;
 
 
 
+
 @Repository
 public interface CursoRepository extends JpaRepository<CursoModel,Long>{
-    Optional<CursoModel>findByInstituição(String instituição);
+    Optional<CursoModel>findByInstituicao(String instituicao);
 
 }
