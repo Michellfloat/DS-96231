@@ -1,6 +1,6 @@
-package com.example.sec.model;
+package com.example.demo.model;
 
-import com.example.sec.model.enums.Sexo;
+import com.example.demo.model.enums.Sexo;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,9 +12,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Jogadores")
-public class JogadorModel {
-    
+@Table(name = "tab_clientes")
+public class ClienteModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,29 +21,33 @@ public class JogadorModel {
     @Column(nullable = false)
     private String nome;
 
+    @Column(nullable = false)
+    private String idade;
+
     @Column(nullable = false, unique = true)
     private String email;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Sexo sexo;
 
     @Column(nullable = false)
     private String senha;
 
     @Column(nullable = false)
-    private Integer idade;
+    private String telefone;
 
-    @Column(nullable = false)
-    @Enumerated(EnumType.STRING)
-    private Sexo sexo;
-
-    public JogadorModel() {
+    public ClienteModel() {
     }
 
-    public JogadorModel(Long id, String nome, String email, String senha, Integer idade, Sexo sexo) {
+    public ClienteModel(Long id, String nome, String idade, String email, Sexo sexo, String senha, String telefone) {
         this.id = id;
         this.nome = nome;
-        this.email = email;
-        this.senha = senha;
         this.idade = idade;
+        this.email = email;
         this.sexo = sexo;
+        this.senha = senha;
+        this.telefone = telefone;
     }
 
     public Long getId() {
@@ -63,28 +66,20 @@ public class JogadorModel {
         this.nome = nome;
     }
 
+    public String getIdade() {
+        return idade;
+    }
+
+    public void setIdade(String idade) {
+        this.idade = idade;
+    }
+
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-    public Integer getIdade() {
-        return idade;
-    }
-
-    public void setIdade(Integer idade) {
-        this.idade = idade;
     }
 
     public Sexo getSexo() {
@@ -95,7 +90,21 @@ public class JogadorModel {
         this.sexo = sexo;
     }
 
-    
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
 
     
 }

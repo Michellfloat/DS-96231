@@ -1,19 +1,17 @@
-package com.example.sec.dto;
+package com.example.demo.dto;
 
-import com.example.sec.model.enums.Sexo;
-
-public class JogadorResponseDTO {
+public class ClienteResponseDTO {
     private String nome;
     private String email;
-    private Sexo sexo;
+    private String telefone;
     
-    public JogadorResponseDTO() {
+    public ClienteResponseDTO() {
     }
 
-    public JogadorResponseDTO(String nome, String email, Sexo sexo) {
+    public ClienteResponseDTO(String nome, String email, String telefone) {
         this.nome = nome;
         this.email = email;
-        this.sexo = sexo;
+        this.telefone = telefone;
     }
 
     public String getNome() {
@@ -32,12 +30,12 @@ public class JogadorResponseDTO {
         this.email = email;
     }
 
-    public Sexo getSexo() {
-        return sexo;
+    public String getTelefone() {
+        return telefone;
     }
 
-    public void setSexo(Sexo sexo) {
-        this.sexo = sexo;
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
     
