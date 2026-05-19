@@ -18,8 +18,7 @@ public class ClienteService {
     @Autowired
     private ClienteRepository clienteRepository;
 
-    @Autowired
-    private BCryptPasswordEncoder encoder;
+    
 
     public ClienteModel salvarClientes(ClienteRequestDTO cliente){
         if (clienteRepository.findByEmail(cliente.getEmail()).isPresent()) {
@@ -27,17 +26,15 @@ public class ClienteService {
         }
         ClienteModel novCliente = new ClienteModel();
         novCliente.setNome(cliente.getNome());
-        novCliente.setSexo(cliente.getSexo());
+        novCliente.setEndereco(cliente.getEndereco());
         novCliente.setEmail(cliente.getEmail());
-        novCliente.setSenha(encoder.encode(cliente.getSenha()));
-        novCliente.setIdade(cliente.getIdade());
-        novCliente.setTelefone(cliente.getTelefone());
+        
 
         return clienteRepository.save(novCliente);
     }
 
     public List<ClienteResponseDTO>listarClientes(){
-        return clienteRepository.findAll().stream().map(c -> new ClienteResponseDTO(c.getNome(),c.getEmail(),c.getTelefone())).toList();
+        return clienteRepository.findAll().stream().map(c -> new ClienteResponseDTO(c.getNome(),c.getEmail(),c.getEndereco())).toList();
     }
 
     @Transactional
@@ -46,15 +43,12 @@ public class ClienteService {
         ClienteModel clienteExiste = clienteRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("Este cliente não existe!"));
         
         clienteExiste.setNome(cliente.getNome());
-        clienteExiste.setIdade(cliente.getIdade());
         clienteExiste.setEmail(cliente.getEmail());
-        clienteExiste.setSexo(cliente.getSexo());
-        clienteExiste.setSenha(cliente.getSenha());
-        clienteExiste.setTelefone(cliente.getTelefone());
+        clienteExiste.setEndereco(cliente.getEndereco());
 
         ClienteModel atualizado = clienteRepository.save(clienteExiste);
 
-        return new ClienteResponseDTO(atualizado.getNome(),atualizado.getEmail(),atualizado.getTelefone());
+        return new ClienteResponseDTO(atualizado.getNome(),atualizado.getEmail(),atualizado.getEndereco());
     }
 
     @Transactional
