@@ -32,7 +32,7 @@ public class FuncionarioModel {
     @Column(nullable = false)
     private String email;
     
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "endereco_id")
     private EnderecoModel endereco;
 

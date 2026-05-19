@@ -3,12 +3,12 @@ package com.example.demo.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.ClienteRequestDTO;
 import com.example.demo.dto.ClienteResponseDTO;
 import com.example.demo.model.ClienteModel;
+import com.example.demo.model.EnderecoModel;
 import com.example.demo.repository.ClienteRepository;
 
 import jakarta.transaction.Transactional;
@@ -39,12 +39,21 @@ public class ClienteService {
 
     @Transactional
     public ClienteResponseDTO atualizarClientes(Long id, ClienteRequestDTO cliente){
-
+        ClienteModel clienteDadosNovos = new ClienteModel();
         ClienteModel clienteExiste = clienteRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("Este cliente não existe!"));
         
         clienteExiste.setNome(cliente.getNome());
         clienteExiste.setEmail(cliente.getEmail());
-        clienteExiste.setEndereco(cliente.getEndereco());
+        if (clienteExiste.getEndereco() != null && clienteDadosNovos.getEndereco() != null) {
+        EnderecoModel enderecoExistente = clienteExiste.getEndereco();
+        EnderecoModel env = clienteDadosNovos.getEndereco();
+        
+        enderecoExistente.setCep(env.getCep());
+        enderecoExistente.setLogradouro(env.getLogradouro());
+        enderecoExistente.setNumero(env.getNumero());
+        enderecoExistente.setCidade(env.getCidade());
+        enderecoExistente.setUf(env.getUf());
+    }
 
         ClienteModel atualizado = clienteRepository.save(clienteExiste);
 

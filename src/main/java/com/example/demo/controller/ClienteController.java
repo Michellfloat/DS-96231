@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dto.ClienteRequestDTO;
 import com.example.demo.dto.ClienteResponseDTO;
+import com.example.demo.model.ClienteModel;
 import com.example.demo.service.ClienteService;
 
 import jakarta.validation.Valid;
