@@ -24,7 +24,7 @@ public class ProfessorService {
     @Autowired
     private BCryptPasswordEncoder encoder;
 
-    public ProfessorModel salvarAlunos(ProfessorRequestDTO professor){
+    public ProfessorModel salvarProfessores(ProfessorRequestDTO professor){
         if (professorRepository.findByCndb(professor.getCndb()).isPresent()) {
             throw new RuntimeException("professor já cadastrado!");
         }

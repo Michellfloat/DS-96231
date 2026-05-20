@@ -34,7 +34,7 @@ public class ProfessorController {
 
     @PostMapping
     public ResponseEntity<Map<String,Object>>salvar(@Valid @RequestBody ProfessorRequestDTO professorDTO){
-        ProfessorService.salvarAlunos(professorDTO);
+        ProfessorService.salvarProfessores(professorDTO);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(Map.of("mensagem","Aluno salvo com sucesso!"));
     }
