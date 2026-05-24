@@ -1,0 +1,15 @@
+.mensagem h1{
+    font-size:  50px;
+    color: red;
+    margin: 20px auto;
+}
+
+.mensagem p{
+    font-size: xx-small;
+    color: aqua;
+    margin:  auto;
+}
+
+body{
+    background-color: black;
+}
