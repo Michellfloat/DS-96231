@@ -1,15 +1,217 @@
-.mensagem h1{
-    font-size:  50px;
-    color: red;
-    margin: 20px auto;
+:root {
+  --bg-1: #020412;
+  --bg-2: #090016;
+  --neon: #6cf6ff;
+  --purple: #7b2cff;
+  --pink: #ff3cac;
+  --white: #f5f7ff;
 }
 
-.mensagem p{
-    font-size: xx-small;
-    color: aqua;
-    margin:  auto;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background-color: black;
+body {
+  min-height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    radial-gradient(circle at center, #1b1038 0%, #090016 35%, #000 70%),
+    linear-gradient(180deg, var(--bg-1), #000);
+
+  font-family: "Poppins", sans-serif;
+
+  position: relative;
+}
+
+/* ESTRELAS */
+body::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(cyan 1px, transparent 1px),
+    radial-gradient(#ff66ff 1px, transparent 1px);
+
+  background-size:
+    120px 120px,
+    200px 200px,
+    300px 300px;
+
+  background-position:
+    0 0,
+    40px 80px,
+    130px 20px;
+
+  opacity: 0.6;
+
+  animation: estrelas 20s linear infinite;
+}
+
+/* BURACO NEGRO */
+.black-hole {
+  width: 340px;
+  height: 340px;
+
+  position: relative;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle, #000 35%, #120020 60%, #290046 75%, transparent 76%);
+
+  box-shadow:
+    0 0 30px rgba(123, 44, 255, 0.8),
+    0 0 80px rgba(255, 60, 172, 0.5),
+    0 0 140px rgba(108, 246, 255, 0.3);
+
+  animation:
+    pulsar 4s ease-in-out infinite;
+}
+
+/* ANEL ENERGÉTICO */
+.black-hole::before {
+  content: "";
+
+  position: absolute;
+  inset: -30px;
+
+  border-radius: 50%;
+
+  border:
+    12px solid transparent;
+
+  border-top:
+    12px solid var(--neon);
+
+  border-bottom:
+    12px solid var(--pink);
+
+  transform:
+    rotateX(75deg);
+
+  filter:
+    blur(1px)
+    drop-shadow(0 0 15px cyan);
+
+  animation:
+    girar 2s linear infinite;
+}
+
+/* DISTORÇÃO */
+.black-hole::after {
+  content: "";
+
+  position: absolute;
+  inset: -60px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      transparent 40%,
+      rgba(255,255,255,0.05) 60%,
+      transparent 70%
+    );
+
+  filter: blur(8px);
+
+  animation:
+    distorcer 5s ease-in-out infinite;
+}
+
+/* TEXTO */
+.title {
+  position: absolute;
+
+  color: var(--white);
+
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+
+  text-shadow:
+    0 0 10px white,
+    0 0 20px cyan,
+    0 0 40px #7b2cff,
+    0 0 80px #ff3cac;
+
+  animation:
+    brilho 2s infinite alternate;
+}
+
+/* ANIMAÇÕES */
+
+@keyframes girar {
+  from {
+    transform:
+      rotateX(75deg)
+      rotateZ(0deg);
+  }
+
+  to {
+    transform:
+      rotateX(75deg)
+      rotateZ(360deg);
+  }
+}
+
+@keyframes pulsar {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes brilho {
+  from {
+    opacity: 0.7;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes estrelas {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(100px);
+  }
+}
+
+@keyframes distorcer {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+h1{
+    color: white;
+}
+p{
+    color: white;
 }
