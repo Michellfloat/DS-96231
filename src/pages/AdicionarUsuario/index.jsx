@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './style.css'
 
+//Conteúdo principal
 export default function AdicionarUsuario(){
     let[nome,setNome] = useState('')
     let[email,setEmail] = useState('')

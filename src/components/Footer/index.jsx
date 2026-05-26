@@ -1,5 +1,6 @@
 import './style.css'
 
+//Rodapé da página
 export default function Footer() {
     return(
     <footer className='footer'>
