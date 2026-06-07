@@ -1,10 +1,89 @@
-.header{
-    position: sticky;
-    top: 0;
-    background-color: aqua;
+/* HEADER ESTILO SONIC */
+.header {
+    background: linear-gradient(
+        90deg,
+        #0057ff 0%,
+        #008cff 50%,
+        #0057ff 100%
+    );
+    border-bottom: 5px solid #ffd700;
+    padding: 15px 40px;
 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.header h2{
-    color: white;
+/* LOGO */
+.header-logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow:
+        3px 3px 0 #000,
+        0 0 10px rgba(255, 255, 255, 0.5);
+    transition: transform 0.2s ease;
+}
+
+.header-logo:hover {
+    transform: scale(1.08);
+}
+
+/* CONTAINER DOS LINKS */
+.header nav {
+    display: flex;
+    gap: 25px;
+}
+
+/* LINKS HOME E SOBRE NÓS */
+.header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+
+    padding: 8px 16px;
+    border: 3px solid transparent;
+    border-radius: 999px;
+
+    transition: all 0.25s ease;
+}
+
+/* EFEITO HOVER */
+.header nav a:hover {
+    background: #ffd700;
+    color: #003399;
+    border-color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.7);
+}
+
+/* LINK ATIVO */
+.header nav a.active {
+    background: #ffd700;
+    color: #003399;
+    border-color: #fff;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .header nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .header-logo {
+        font-size: 1.6rem;
+    }
 }
