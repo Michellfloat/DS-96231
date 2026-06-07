@@ -9,6 +9,8 @@ import Clientes from './pages/Clientes'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import SobreNos from './pages/SobreNos'
+import Produtos from './pages/Produtos'
+import Servicos from './pages/Servicos'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -27,6 +29,8 @@ function App() {
     <Routes>
     <Route path='/' element={<Home />} />
     <Route path='/' element={<SobreNos />} />
+    <Route path='/' element={<Produtos />} />
+    <Route path='/' element={<Servicos />} />
     </Routes>
       <Clientes />
       <AdicionarUsuario />

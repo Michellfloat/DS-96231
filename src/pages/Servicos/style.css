@@ -1,0 +1,115 @@
+/* Escopo Global do Componente de Serviços */
+.servicos-container {
+  background-color: #050505;
+  color: #00ff00;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 40px 20px;
+  min-h-screen: 100vh;
+}
+
+.terminal-header {
+  border-bottom: 2px dashed #003300;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+}
+
+.terminal-title {
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  margin: 0 0 10px 0;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.terminal-subtitle {
+  color: #008800;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Grid Layout */
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card Hackerspace */
+.servicos-card {
+  background-color: #0a0a0a;
+  border: 1px solid #004400;
+  padding: 20px;
+  position: relative;
+  transition: all 0.25s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  margin-bottom: 15px;
+}
+
+.card-id {
+  color: #008800;
+}
+
+.card-status.ready { color: #00ff00; }
+.card-status.active_monitor { color: #ffaa00; text-shadow: 0 0 5px rgba(255,170,0,0.4); }
+
+.card-title {
+  font-size: 1.3rem;
+  margin: 0 0 10px 0;
+  color: #ffffff;
+}
+
+.card-codename {
+  font-size: 0.75rem;
+  color: #00aa00;
+  background-color: #021102;
+  padding: 4px 8px;
+  display: inline-block;
+  margin-bottom: 15px;
+  width: fit-content;
+}
+
+.card-description {
+  color: #a0cca0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+}
+
+.card-footer {
+  font-size: 0.85rem;
+  color: #00ff00;
+  font-weight: bold;
+}
+
+/* Efeitos de Hover e Animações */
+.servicos-card:hover {
+  border-color: #00ff00;
+  background-color: #0d140d;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.blink-cursor {
+  display: inline-block;
+}
+
+.servicos-card:hover .blink-cursor::after {
+  content: ' █';
+  animation: blink 0.8s infinite;
+  color: #00ff00;
+}

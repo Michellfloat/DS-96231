@@ -1,0 +1,138 @@
+/* Escopo Global do Componente de Produtos */
+.produtos-container {
+  background-color: #060810;
+  color: #00f0ff;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+/* Barra de Status do Arsenal */
+.cyber-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #004455;
+  background-color: #0b111e;
+  padding: 15px 20px;
+  margin-bottom: 50px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-title {
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+}
+
+.arsenal-counter {
+  font-size: 0.9rem;
+  color: #8ab4f8;
+}
+
+.counter-value {
+  color: #ffffff;
+  background-color: #004455;
+  padding: 2px 8px;
+  font-weight: bold;
+}
+
+/* Grid de Produtos */
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card Militarizado */
+.produtos-card {
+  background-color: #090d16;
+  border: 1px solid #002b35;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.produtos-tag {
+  position: absolute;
+  top: -12px;
+  left: 15px;
+  background-color: #060810;
+  border: 1px solid #004455;
+  color: #8ab4f8;
+  font-size: 0.7rem;
+  padding: 2px 10px;
+  text-transform: uppercase;
+}
+
+.produtos-id {
+  color: #005566;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+  margin-top: 5px;
+}
+
+.produtos-name {
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.5px;
+}
+
+.produtos-desc {
+  color: #8ca3b3;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin: 0 0 25px 0;
+}
+
+/* Área de Compra */
+.produtos-action-zone {
+  border-top: 1px dashed #003b47;
+  padding-top: 15px;
+}
+
+.produtos-price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 15px;
+  text-align: right;
+}
+
+/* Botão Terminal */
+.btn-arsenal {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid #00f0ff;
+  color: #00f0ff;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 12px 0;
+  font-weight: bold;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Hovers e Estados Ativos */
+.produtos-card:hover {
+  border-color: #00f0ff;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+}
+
+.btn-arsenal:hover {
+  background-color: #00f0ff;
+  color: #060810;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+.btn-arsenal:active {
+  transform: scale(0.98);
+}

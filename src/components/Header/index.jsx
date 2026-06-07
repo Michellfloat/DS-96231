@@ -17,8 +17,17 @@ export default function Header() {
                 <NavLink>
                     <Link to="/">☟︎□︎❍︎♏︎</Link>
                 </NavLink>
+
                 <NavLink>
                     <Link to="/sobre-nos">💧︎□︎♌︎❒︎♏︎ ☠︎⬄︎⬧︎</Link>
+                </NavLink>
+
+                <NavLink>
+                    <Link to="/produtos">◻︎❒︎□︎♎︎◆︎⧫︎□︎⬧︎</Link>
+                </NavLink>
+
+                <NavLink>
+                    <Link to="/servicos">⬧︎♏︎❒︎❖︎♓︎♍︎□︎⬧︎</Link>
                 </NavLink>
             </nav>
         </header>
