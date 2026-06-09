@@ -1,7 +1,6 @@
 import { Link, NavLink } from 'react-router-dom'
 import './style.css'
 
-//Ficará no início!!!
 export default function Header() {
     return (
         <header className='header'>
@@ -14,21 +13,11 @@ export default function Header() {
             </div>
 
             <nav>
-                <NavLink>
-                    <Link to="/">☟︎□︎❍︎♏︎</Link>
-                </NavLink>
-
-                <NavLink>
-                    <Link to="/sobre-nos">💧︎□︎♌︎❒︎♏︎ ☠︎⬄︎⬧︎</Link>
-                </NavLink>
-
-                <NavLink>
-                    <Link to="/produtos">◻︎❒︎□︎♎︎◆︎⧫︎□︎⬧︎</Link>
-                </NavLink>
-
-                <NavLink>
-                    <Link to="/servicos">⬧︎♏︎❒︎❖︎♓︎♍︎□︎⬧︎</Link>
-                </NavLink>
+                {/* Removido o <Link> de dentro do <NavLink>, passando o 'to' direto */}
+                <NavLink to="/">☟︎□︎❍︎♏︎</NavLink>
+                <NavLink to="/sobre-nos">💧︎□︎♌︎❒︎♏︎ ☠︎⬄︎⬧︎</NavLink>
+                <NavLink to="/produtos">◻︎❒︎□︎♎︎◆︎⧫︎□︎⬧︎</NavLink>
+                <NavLink to="/servicos">⬧︎♏︎❒︎❖︎♓︎♍︎□︎⬧︎</NavLink>
             </nav>
         </header>
     )

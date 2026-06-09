@@ -1,41 +1,35 @@
 import { useState } from 'react'
 import './App.css'
-import Mensagem from './components/Mensagem'
-import InfoCurso from './components/InfoCurso'
 import Header from './components/Header'
-import AdicionarUsuario from './pages/AdicionarUsuario'
 import Footer from './components/Footer'
-import Clientes from './pages/Clientes'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import SobreNos from './pages/SobreNos'
 import Produtos from './pages/Produtos'
 import Servicos from './pages/Servicos'
+import Clientes from './pages/Clientes'
+import AdicionarUsuario from './pages/AdicionarUsuario'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-    <Header />
-    
-    <h1>💣︎♏︎◆︎ 📂︎◻︎ ◻︎❒︎□︎🙰♏︎⧫︎□︎??</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, architecto.</p>
+      <Header />
+      
+      <main>
+        <Routes>
+          {/* Rotas principais corrigidas com seus respectivos caminhos */}
+          <Route path='/' element={<Home />} />
+          <Route path='/sobre-nos' element={<SobreNos />} />
+          <Route path='/produtos' element={<Produtos />} />
+          <Route path='/servicos' element={<Servicos />} />
+          
+          {/* Coloquei essas páginas dentro das rotas para não poluírem o layout global */}
+          <Route path='/clientes' element={<Clientes />} />
+          <Route path='/adicionar-usuario' element={<AdicionarUsuario />} />
+        </Routes>
+      </main>
 
-    {/*<Mensagem/>*/}
-    {/*<InfoCurso/>*/}
-
-    <main>
-    <Routes>
-    <Route path='/' element={<Home />} />
-    <Route path='/' element={<SobreNos />} />
-    <Route path='/' element={<Produtos />} />
-    <Route path='/' element={<Servicos />} />
-    </Routes>
-      <Clientes />
-      <AdicionarUsuario />
-    </main>
-    <Footer />
+      <Footer />
     </>
   )
 }

@@ -52,17 +52,17 @@ const Produtos = () => {
 
       <div className="produtos-grid">
         {produtosMockData.map((product) => (
-          <div key={product.id} className="product-card">
-            <div className="product-tag">{product.category}</div>
+          <div key={product.id} className="produtos-card">
+            <div className="produtos-tag">{product.category}</div>
             
-            <div className="product-main-info">
-              <div className="product-id">{product.id}</div>
-              <h2 className="product-name">{product.name}</h2>
-              <p className="product-desc">{product.description}</p>
+            <div className="produtos-main-info">
+              <div className="produtos-id">{product.id}</div>
+              <h2 className="produtos-name">{product.name}</h2>
+              <p className="produtos-desc">{product.description}</p>
             </div>
 
-            <div className="product-action-zone">
-              <div className="product-price">{product.price}</div>
+            <div className="produtos-action-zone">
+              <div className="produtos-price">{product.price}</div>
               <button 
                 onClick={() => addToArsenal(product.name)}
                 className="btn-arsenal"

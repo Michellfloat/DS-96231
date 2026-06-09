@@ -43,7 +43,7 @@ const Servicos = () => {
 
       <div className="servicos-grid">
         {servicosMockData.map((service) => (
-          <div key={service.id} className="service-card">
+          <div key={service.id} className="servicos-card">
             <div className="card-header">
               <span className="card-id">[{service.id}]</span>
               <span className={`card-status ${service.status.toLowerCase()}`}>

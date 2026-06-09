@@ -4,7 +4,7 @@
   color: #00ff00;
   font-family: 'Courier New', Courier, monospace;
   padding: 40px 20px;
-  min-h-screen: 100vh;
+  min-height: 100vh;
 }
 
 .terminal-header {
