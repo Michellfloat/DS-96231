@@ -5,7 +5,8 @@ import './style.css'
 export default function SobreNos(){
     return(
         <div className='page-sobre-nos'>
-        <h1>Sobre Nós</h1>
+        <h1>💧︎□︎♌︎❒︎♏︎ ☠︎⬄︎⬧︎</h1>
+        <img src="src/assets/anonymous.svg" alt="Hacker"/>
         <ul>
             <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias, laborum et perspiciatis excepturi vitae adipisci ipsum ab eveniet deleniti fuga impedit quos, dolorum non repellendus odio aperiam eligendi earum dicta.</li>
             
