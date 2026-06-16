@@ -2,9 +2,9 @@ import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header'
-import Home from './assets/pages/Home/Home'
 import CadastroPage from './assets/pages/CadastroPage/CadastroPage'
 import ListaUsuariosPage from './assets/pages/ListaUsuarioPage/ListaUsuarioPage'
+import HomePage from './pages/HomePage'
 
 function App() {
   
@@ -14,9 +14,9 @@ function App() {
       <Header />
       <main>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/' element={<CadastroPage />} />
-        <Route path='/' element={<ListaUsuariosPage />} />
+        <Route path='/' element={<HomePage />} />
+        <Route path='/cadastro-page' element={<CadastroPage />} />
+        <Route path='/listar-usuarios' element={<ListaUsuariosPage />} />
       </Routes>
       </main>
       <Footer />
